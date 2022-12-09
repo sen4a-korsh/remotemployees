@@ -17,7 +17,9 @@ class LotFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => fake()->sentence(rand(1,3)),
+            'description' => fake()->text(),
+            'price' => fake()->randomFloat(2,10,100000)
         ];
     }
 }

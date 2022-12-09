@@ -10,6 +10,8 @@ class LotController extends Controller
 {
     public function index()
     {
+        $lots = Lot::count();
 
+        dd($lots);
     }
 }

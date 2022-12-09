@@ -23,7 +23,6 @@ return new class extends Migration
                 ->constrained('categories')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->float('price');
             $table->timestamps();
         });
     }
