@@ -19,7 +19,7 @@ class LotFactory extends Factory
         return [
             'title' => fake()->sentence(rand(1,3)),
             'description' => $this->faker->text,
-            'price' => fake()->randomFloat(2,10,100000)
+            'price' => rand(10,100000),
         ];
     }
 }
