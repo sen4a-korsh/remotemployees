@@ -29,7 +29,6 @@
                                     {{$lotCategories->id == $category->id ? 'selected' : ''}}
                             @endforeach
                             value="{{ $category->id }}"> {{ $category->name }}</option>
-
                     @endforeach
                 </select>
             </div>

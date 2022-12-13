@@ -6,16 +6,25 @@ use App\Http\Requests\Lot\StoreRequest;
 use App\Http\Requests\Lot\UpdateRequest;
 use App\Models\Category;
 use App\Models\Lot;
+use App\Services\LotFilter;
 use App\Services\LotService;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+
 
 class LotController extends Controller
 {
-    public function index()
-    {
-        $lots = Lot::all();
 
-        return view('lot.index', compact('lots'));
+    public function index(Request $request, LotFilter $lotFilter)
+    {
+        $lots = $lotFilter->filterByCategories($request->categories);
+
+        $checkCategoryArr = $request->categories;
+
+        $categories = Category::all();
+
+        return view('lot.index', compact('lots', 'categories', 'checkCategoryArr'));
     }
 
     public function create()

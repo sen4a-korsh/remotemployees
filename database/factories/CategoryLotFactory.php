@@ -18,11 +18,8 @@ class CategoryLotFactory extends Factory
      */
     public function definition()
     {
-        $lots = Lot::count();
-        $categories = Category::count();
         return [
-            'lot_id' => rand(1,$lots),
-            'category_id' => rand(1,$categories),
+            //
         ];
     }
 }
